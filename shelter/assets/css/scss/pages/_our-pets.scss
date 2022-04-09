@@ -1,0 +1,53 @@
+// Header
+
+.our-pets .head {
+    padding: 30px 0;
+}
+
+.our-pets .logo-title {
+    color: $color-dark-l;
+}
+
+.our-pets .logo-subtitle {
+    color: $color-dark-3xl;
+}
+
+.our-pets .navbar a {
+    color: $color-dark-l;
+}
+
+.our-pets .navbar a:hover {
+    color: $color-dark-3xl;
+}
+
+// Friends Section
+
+#friends {
+    background-color: $color-light-l;
+}
+
+#friends .subheader {
+    margin: 0 auto;
+    max-width: 400px;
+    padding-top: 80px;
+    padding-bottom: 45px;
+    text-align: center;
+}
+
+#friends .row {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#friends .card {
+    margin: 15px auto;
+}
+
+.buttons-block {
+    padding-top: 45px;
+    padding-bottom: 100px;
+}
+
+.buttons-block .button-arrow {
+    margin: 0 10px;
+}

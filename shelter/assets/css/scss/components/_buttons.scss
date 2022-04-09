@@ -18,7 +18,10 @@
 
 .button-arrow {
     display: flex;
-    font-weight: bold;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
     font-family: $font-primary;
     flex-direction: column;
     align-items: center;
@@ -28,7 +31,6 @@
     background-color: $color-light-l;
     border: 2px solid $color-primary;
     border-radius: 100px;
-    line-height: 16px;
 }
 
 .button:hover {
