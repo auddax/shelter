@@ -1,0 +1,44 @@
+.button {
+    font-family: $font-primary;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    padding: 15px 45px;
+    border-radius: 100px;
+}
+
+.button-solid {
+    background-color: $color-primary;
+    border: 2px solid $color-primary;
+}
+
+.button-outline {
+    background-color: $color-light-xl;
+    border: 2px solid $color-primary;
+}
+
+.button-arrow {
+    display: flex;
+    font-weight: bold;
+    font-family: $font-primary;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: $color-light-l;
+    border: 2px solid $color-primary;
+    border-radius: 100px;
+    line-height: 16px;
+}
+
+.button:hover {
+    background-color: $color-primary-light;
+    border: 2px solid $color-primary-light;
+    cursor: pointer;
+}
+
+.button-arrow:hover {
+    background-color: $color-primary-light;
+    border: 2px solid $color-primary-light;
+    cursor: pointer;
+}

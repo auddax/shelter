@@ -1,0 +1,15 @@
+@import 'abstracts/variables';
+@import 'abstracts/placeholders';
+
+@import 'vendors/normalize';
+
+@import 'layout/general';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/footer';
+
+@import 'components/buttons';
+
+@import 'pages/main';
+@import 'pages/our-pets';
+

@@ -1,0 +1,41 @@
+footer {
+    @extend %background-gradient;
+}
+
+#contacts .subheader {
+    color: $color-light-xl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+}
+
+#contacts .row {
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+.contacts-text {
+    margin-right: 160px;
+}
+
+.contacts-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.contacts-item img {
+    margin-right: 20px;
+}
+
+.contacts-item a {
+    color: $color-primary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+}
