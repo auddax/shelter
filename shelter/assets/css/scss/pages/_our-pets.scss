@@ -1,24 +1,36 @@
 // Header
 
-.our-pets .head {
-    padding: 30px 0;
+.our-pets {
+
+    header {
+        background-color: $color-light-xl;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    
+    .head {
+        padding: 30px 0;
+    }
+
+    .logo-title {
+        color: $color-dark-l;
+    }
+
+    .logo-subtitle {
+        color: $color-dark-3xl;
+    }
+
+    .navbar a {
+        color: $color-dark-l;
+    }
+
+    .navbar a:hover {
+        color: $color-dark-3xl;
+    }
+
 }
 
-.our-pets .logo-title {
-    color: $color-dark-l;
-}
-
-.our-pets .logo-subtitle {
-    color: $color-dark-3xl;
-}
-
-.our-pets .navbar a {
-    color: $color-dark-l;
-}
-
-.our-pets .navbar a:hover {
-    color: $color-dark-3xl;
-}
 
 // Friends Section
 

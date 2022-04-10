@@ -732,22 +732,24 @@ figcaption {
   letter-spacing: 0.06em;
 }
 
+.our-pets header {
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 .our-pets .head {
   padding: 30px 0;
 }
-
 .our-pets .logo-title {
   color: #545454;
 }
-
 .our-pets .logo-subtitle {
   color: #292929;
 }
-
 .our-pets .navbar a {
   color: #545454;
 }
-
 .our-pets .navbar a:hover {
   color: #292929;
 }
