@@ -63,22 +63,27 @@
     align-items: center;
     max-width: 270px;
     margin: 60px auto;
-}
 
-.card:hover {
-    cursor: pointer;
-    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-}
+    & .button {
+        margin: 30px auto;
+    }
 
-.card:hover .button {
-    background-color: $color-primary-light;
-    border: 2px solid $color-primary-light;
-}
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);    
+    }
 
-.card .button {
-    margin: 30px auto;
-}
+    &:hover .button {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;    
+    }
 
+    &:hover img {
+        border-radius: 9px 9px 0 0;
+        background-color: $color-light-s;
+        mix-blend-mode: multiply;    
+    }
+}
 
 figure {
     display: inline-block;

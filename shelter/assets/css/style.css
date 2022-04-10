@@ -515,6 +515,11 @@ ul > li > a {
   padding: 15px 45px;
   border-radius: 100px;
 }
+.button:hover {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+  cursor: pointer;
+}
 
 .button-solid {
   background-color: #f1cdb3;
@@ -527,10 +532,10 @@ ul > li > a {
 }
 
 .button-arrow {
-  display: flex;
+  display: inline-flex;
   font-weight: 400;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: normal;
   letter-spacing: 0.06em;
   font-family: "Gelasio", serif;
   flex-direction: column;
@@ -541,18 +546,25 @@ ul > li > a {
   background-color: #f6f6f6;
   border: 2px solid #f1cdb3;
   border-radius: 100px;
+  padding: 0;
 }
-
-.button:hover {
-  background-color: #fddcc4;
-  border: 2px solid #fddcc4;
-  cursor: pointer;
-}
-
 .button-arrow:hover {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
   cursor: pointer;
+}
+
+.button-active {
+  background-color: #f1cdb3;
+  border: 2px solid #f1cdb3;
+}
+
+.button-inactive,
+.button-inactive:hover {
+  color: #cdcdcd;
+  background-color: #f6f6f6;
+  border: 2px solid #cdcdcd;
+  cursor: auto;
 }
 
 #about {
@@ -609,19 +621,21 @@ ul > li > a {
   max-width: 270px;
   margin: 60px auto;
 }
-
+.card .button {
+  margin: 30px auto;
+}
 .card:hover {
   cursor: pointer;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
-
 .card:hover .button {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
-
-.card .button {
-  margin: 30px auto;
+.card:hover img {
+  border-radius: 9px 9px 0 0;
+  background-color: #fafafa;
+  mix-blend-mode: multiply;
 }
 
 figure {

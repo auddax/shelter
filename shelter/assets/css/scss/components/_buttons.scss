@@ -4,6 +4,12 @@
     letter-spacing: 0.06em;
     padding: 15px 45px;
     border-radius: 100px;
+
+    &:hover {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+        cursor: pointer;
+    }
 }
 
 .button-solid {
@@ -17,10 +23,10 @@
 }
 
 .button-arrow {
-    display: flex;
+    display: inline-flex;
     font-weight: 400;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: normal;
     letter-spacing: 0.06em;
     font-family: $font-primary;
     flex-direction: column;
@@ -31,16 +37,24 @@
     background-color: $color-light-l;
     border: 2px solid $color-primary;
     border-radius: 100px;
+    padding: 0;
+
+    &:hover {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+        cursor: pointer;
+    }
 }
 
-.button:hover {
-    background-color: $color-primary-light;
-    border: 2px solid $color-primary-light;
-    cursor: pointer;
+.button-active {
+    background-color: $color-primary;
+    border: 2px solid $color-primary;
 }
 
-.button-arrow:hover {
-    background-color: $color-primary-light;
-    border: 2px solid $color-primary-light;
-    cursor: pointer;
+.button-inactive,
+.button-inactive:hover {
+    color: $color-dark-s;
+    background-color: $color-light-l;
+    border: 2px solid $color-dark-s;
+    cursor: auto;
 }
