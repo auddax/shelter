@@ -520,12 +520,16 @@ img {
 @media screen and (max-width: 767px) {
   .home-text {
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .logo {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 3;
 }
 
 .logo-title {
@@ -550,11 +554,6 @@ img {
   letter-spacing: 0.09em;
 }
 
-@media screen and (max-width: 767px) {
-  .navbar {
-    display: none;
-  }
-}
 ul {
   display: flex;
   list-style: none;
@@ -571,6 +570,69 @@ ul > li > a {
   line-height: 1.6;
   letter-spacing: -0.02em;
   margin-left: 35px;
+}
+.burger-menu ul > li > a {
+  font-size: 32px;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    display: none;
+  }
+}
+
+.burger-menu {
+  display: none;
+}
+.our-pets .burger-menu {
+  fill: black;
+}
+.burger-menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px 0;
+  background-color: #292929;
+  flex-direction: column;
+  overflow-x: hidden;
+  width: 0;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+  right: -100vw;
+  z-index: 2;
+}
+@media screen and (max-width: 767px) {
+  .burger-menu {
+    display: block;
+    margin-right: 43px;
+    cursor: pointer;
+  }
+}
+
+.burger {
+  transition: transform 0.5s;
+  position: relative;
+  z-index: 3;
+}
+
+.menu-active .burger {
+  transform: rotate(90deg);
+}
+.our-pets .menu-active .burger {
+  filter: invert(86%) sepia(35%) saturate(380%) hue-rotate(321deg) brightness(98%) contrast(92%);
+}
+.menu-active ul {
+  width: 100vw;
+  right: 0px;
+}
+.our-pets .menu-active .logo-title {
+  color: #f1cdb3;
+}
+.our-pets .menu-active .logo-subtitle {
+  color: #ffffff;
 }
 
 #contacts .row {
@@ -1114,10 +1176,19 @@ figcaption {
     padding: 30px;
   }
 }
+@media screen and (max-width: 767px) {
+  .our-pets .head {
+    padding: 30px 10px 30px;
+  }
+}
 .our-pets .logo-title {
+  transition: 0.5s;
+  transition-delay: 0.1s;
   color: #545454;
 }
 .our-pets .logo-subtitle {
+  transition: 0.5s;
+  transition-delay: 0.1s;
   color: #292929;
 }
 .our-pets .navbar a {
