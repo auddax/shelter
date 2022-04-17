@@ -1,58 +1,129 @@
-// Header
-
-.main header {
-    @extend %background-gradient;
-}
-
-
 // About Section
 
 #about {
-    justify-content: center;
-}
+    .row {
+        align-items: stretch;
+        justify-content: center;
+        margin: 80px auto 100px;
 
-.subheader {
-    color: $color-dark-l;
-    font-family: $font-primary;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    line-height: 1.3;
+        @media screen and (max-width: $medium) {
+            flex-wrap: wrap-reverse;
+        }
+
+        @media screen and (max-width: $small) {
+            margin: 42px 10px;
+        }
+    }
+
+    .subheader {
+        padding-top: 0;
+
+        @media screen and (max-width: $small) {
+            text-align: center;
+        }
+    }
+
+    .paragraph {
+        margin-top: 25px;
+        text-align: justify;
+    }
 }
 
 .about-img {
-    margin: 80px 120px 100px 125px;
+    margin-right: 60px;
+
+    @media screen and (max-width: $medium) {
+        margin: 80px 68px 0;
+    }
+
+    @media screen and (max-width: $small) {
+        margin: 42px 20px 0;
+    }
 }
 
 .about-text {
+    justify-content: space-between;
+    margin: 14px 0 14px 60px;
     max-width: 430px;
+
+    @media screen and (max-width: $medium) {
+        margin: 0;
+    }
+
+    @media screen and (max-width: $small) {
+        align-items: center;
+        margin: 0 15px;
+    }
 }
 
-#about .paragraph {
-    margin-top: 25px;
-}
 
 
 // Pets Section
 
 #pets {
     background-color: $color-light-l;
-}
 
-#pets .subheader {
-    margin: 0 auto;
-    padding-top: 80px;
-    max-width: 400px;
-    text-align: center;
-}
+    .subheader {
+        max-width: 400px;
 
-#pets .fixwidth {
-    text-align: center;
-}
+        @media screen and (max-width: $small) {
+            padding-top: 0;;
+        }
+    }
 
-#pets > .fixwidth:last-child {
-    padding-bottom: 100px;
+    .fixwidth {
+        text-align: center;
+
+        @media screen and (max-width: $small) {
+            padding-top: 42px;
+        }
+    }
+
+    & > .fixwidth:last-child {
+        padding-bottom: 100px;
+
+        @media screen and (max-width: $small) {
+            padding-bottom: 42px;
+        }
+    }
+
+    .row {
+        @media screen and (max-width: $medium) {
+            margin: 0 30px;
+        }
+
+        @media screen and (max-width: $small) {
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-bottom: 42px;
+            gap: 0 calc(100vw - 300px);
+        }
+    }
+
+    .row .card {
+        @media screen and (max-width: $small) {
+            margin: 42px auto 20px;
+            order: 1;
+        }
+    }
+
+    .row .button-arrow {
+        @media screen and (max-width: $small) {
+            order: 2;
+        }
+    }
+
+    .row .card:nth-child(4) {
+        @media screen and (max-width: $medium) {
+            display: none;
+        }
+    }
+
+    .row .card:nth-child(3) {
+        @media screen and (max-width: $small) {
+            display: none;
+        }
+    }
 }
 
 .card {
@@ -64,7 +135,13 @@
     max-width: 270px;
     margin: 60px auto;
 
-    & .button {
+    img {
+        @media screen and (max-width: $small) {
+            max-width: 270px;
+        }
+    }
+
+    .button {
         margin: 30px auto;
     }
 
@@ -83,6 +160,7 @@
         background-color: $color-light-s;
         mix-blend-mode: multiply;    
     }
+
 }
 
 figure {
@@ -97,19 +175,33 @@ figcaption {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0.06em;
-    margin-top: 30px;
+    margin-top: 25px;
     text-align: center;
+
+    #help & {
+        @media screen and (max-width: $small) {
+            font-size: 15px;
+            line-height: 1.1;
+        }
+    } 
 }
 
 
 
 // Help Section
 
-#help .subheader {
-    margin: 0 auto;
-    padding-top: 80px;
-    max-width: 400px;
-    text-align: center;
+#help {
+    .subheader {
+        max-width: 400px;
+
+        @media screen and (max-width: $small) {
+            padding-top: 42px;
+        } 
+    }
+
+    .fixwidth {
+        text-align: center;
+    }
 }
 
 .help-items {
@@ -117,35 +209,119 @@ figcaption {
     flex-wrap: wrap;
     justify-content: center;
     margin: 60px auto 45px;
+
+    @media screen and (max-width: $medium) {
+        margin: 60px 69px 45px;
+        justify-content: space-between;
+    }
+    
+    @media screen and (max-width: $small) {
+        margin: 42px 15px 12px;
+        justify-content: flex-start;
+    }
 }
 
 .help-item {
     margin: 0 60px 55px 60px;
+
+    @media screen and (max-width: $medium) {
+        width: 170px;
+        height: 113px;
+        margin: 0 0 55px 0;
+    }
+    
+    @media screen and (max-width: $small) {
+        width: 130px;
+        height: 87px;
+        margin-bottom: 30px;
+
+        &:nth-child(2n+1) {
+            margin-right: 30px;
+        }
+
+        img {
+            max-width: 50px;
+        }
+
+        figcaption {
+            margin-top: 16px;
+        }
+    }
 }
 
 // Donation Section 
 
 #donation {
     background-color: $color-light-l;
-}
 
-#donation .row {
-    justify-content: center;
-    padding: 80px 0 100px;
-}
+    .subheader {
+        padding-top: 0px;
 
-#donation small {
-    color: $color-dark-m;
-    font-family: $font-secondary;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
+        @media screen and (max-width: $small) {
+            text-align: center;
+        }
+    }
+
+    .row {
+        justify-content: center;
+        padding: 80px 0 100px;
+    
+        @media screen and (max-width: $medium) {
+            flex-wrap: wrap-reverse;
+        }
+
+        @media screen and (max-width: $small) {
+            padding: 42px 10px;
+        }
+    }
+
+    .column:first-child {
+        @media screen and (max-width: $small) {
+            padding: 0 20px;
+        }
+    }
+
+    small {
+        color: $color-dark-m;
+        font-family: $font-secondary;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+
+        @media screen and (max-width: $medium) {
+            padding-bottom: 60px;
+        }
+
+        @media screen and (max-width: $small) {
+            padding-bottom: 42px;
+            text-align: justify;
+        }
+    }
 }
 
 .donation-info {
     max-width: 380px;
     margin-left: 30px;
+
+    a {
+        display: inline-block;
+
+        @media screen and (max-width: $small) {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $medium) {
+        margin: 0;
+    }
+
+    @media screen and (max-width: $small) {
+        align-items: center;
+        padding: 0 10px;
+        margin: 0;
+    }
+
 }
 
 .subheader-details {
@@ -153,8 +329,8 @@ figcaption {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
-    line-height: 1.1;
-    letter-spacing: 0.06em;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
     margin: 20px 0;
 }
 
@@ -163,6 +339,7 @@ figcaption {
     background-color: $color-primary;
     border-radius: 9px;
     align-items: center;
+    justify-content: center;
     padding: 10px 15px;
     margin-bottom: 20px;
 }
@@ -182,6 +359,10 @@ figcaption {
     font-weight: 400;
     font-size: 20px;
     line-height: 1.15;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.11em;
+
+    @media screen and (max-width: 370px) {
+        font-size: 15px;
+    }
 }
 

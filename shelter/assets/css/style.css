@@ -1,4 +1,4 @@
-.main header, footer {
+footer, .main header {
   background: url(../img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
@@ -78,6 +78,8 @@ hr {
 p {
   margin: 0;
   padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 pre {
@@ -369,6 +371,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .container {
   margin: 0 auto;
 }
@@ -391,11 +398,6 @@ a {
   align-items: flex-start;
 }
 
-.head {
-  height: 60px;
-  padding: 60px 0;
-}
-
 .header {
   color: #ffffff;
   font-family: "Gelasio", serif;
@@ -403,26 +405,122 @@ a {
   font-weight: 500;
   line-height: 1.3;
   max-width: 310px;
+  display: inline-block;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    display: inline-block;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+  }
+}
+
+.subheader {
+  color: #545454;
+  font-family: "Gelasio", serif;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.29;
+  padding-top: 80px;
+  display: inline-block;
+}
+@media screen and (max-width: 767px) {
+  .subheader {
+    font-size: 25px;
+  }
+}
+
+.head {
+  height: 60px;
+  padding: 60px 0;
 }
 
 .paragraph {
+  display: inline-block;
   font-family: "Open Sans", sans-serif;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.59;
+  letter-spacing: -0.025em;
+}
+
+@media screen and (max-width: 767px) {
+  .main header .row {
+    padding: 30px 10px 0;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .head {
+    padding: 30px;
+  }
 }
 
 .home {
   align-items: flex-end;
 }
-
-.home-text {
-  position: relative;
-  bottom: 243px;
+.home img {
+  width: 100%;
+  height: 100%;
 }
-
+@media screen and (max-width: 1279px) and (min-width: 767px) {
+  .home .column:last-child {
+    margin: 0 70px;
+  }
+}
 .home .paragraph {
   color: #cdcdcd;
   margin: 42px auto;
+}
+@media screen and (max-width: 767px) {
+  .home .paragraph {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .home {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 30px;
+    gap: 100px;
+  }
+  .home img {
+    position: relative;
+    left: 70px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .home {
+    justify-content: flex-end;
+  }
+  .home img {
+    position: unset;
+    max-width: 260px;
+    margin-top: 5px;
+  }
+}
+
+.home-text {
+  max-width: 460px;
+  position: relative;
+  bottom: 243px;
+}
+@media screen and (max-width: 1279px) {
+  .home-text {
+    margin-top: 30px;
+    position: unset;
+  }
+  .home-text a {
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .home-text {
+    align-items: center;
+  }
 }
 
 .logo {
@@ -449,9 +547,14 @@ a {
   font-weight: 400;
   text-align: center;
   line-height: 15px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
 }
 
+@media screen and (max-width: 767px) {
+  .navbar {
+    display: none;
+  }
+}
 ul {
   display: flex;
   list-style: none;
@@ -465,11 +568,38 @@ ul > li > a {
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 160%;
-  padding: 6px 0 7px 0;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
   margin-left: 35px;
 }
 
+#contacts .row {
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 56px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 1279px) {
+  #contacts .row {
+    padding: 30px 30px 0;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  #contacts .row {
+    padding: 30px 10px 0;
+  }
+}
+@media screen and (max-width: 1279px) {
+  #contacts .column:last-child {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  #contacts .column:last-child {
+    margin-top: 0;
+  }
+}
 #contacts .subheader {
   color: #ffffff;
   font-style: normal;
@@ -479,40 +609,88 @@ ul > li > a {
   letter-spacing: 0.06em;
   margin-bottom: 20px;
 }
-
-#contacts .row {
-  align-items: flex-start;
-  padding-top: 56px;
+@media screen and (max-width: 1279px) {
+  #contacts .subheader {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #contacts .subheader {
+    text-align: center;
+    font-size: 25px;
+  }
 }
 
 .contacts-text {
+  justify-content: space-between;
   margin-right: 160px;
+  width: 280px;
+  min-height: 234px;
+}
+@media screen and (max-width: 1279px) {
+  .contacts-text:nth-child(1) {
+    margin: 0 30px 0 34px;
+  }
+  .contacts-text:nth-child(2) {
+    margin: 0 34px 0 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contacts-text {
+    margin: 0 11px;
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contacts-text:first-child {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contacts-text:nth-child(2) {
+    margin: 0 10px;
+  }
+}
+.contacts-text .subheader {
+  padding: 0;
 }
 
 .contacts-item {
   display: flex;
   align-items: center;
-  margin: 20px 0;
 }
-
-.contacts-item img {
-  margin-right: 20px;
+@media screen and (max-width: 1279px) {
+  .contacts-item {
+    margin-bottom: 40px;
+    align-items: flex-start;
+  }
 }
-
 .contacts-item a {
   color: #f1cdb3;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.11;
   letter-spacing: 0.06em;
+  display: block;
+  margin: auto 0;
+}
+.contacts-item img {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .contacts-img {
+    width: 260px;
+  }
 }
 
 .button {
   font-family: "Gelasio", serif;
   font-weight: 400;
-  letter-spacing: 0.06em;
-  padding: 15px 45px;
+  letter-spacing: 0.09em;
+  line-height: 1.35;
+  padding: 13px 43px;
   border-radius: 100px;
 }
 .button:hover {
@@ -558,6 +736,11 @@ ul > li > a {
   background-color: #f1cdb3;
   border: 2px solid #f1cdb3;
 }
+.button-active:hover {
+  background-color: #f1cdb3;
+  border: 2px solid #f1cdb3;
+  cursor: auto;
+}
 
 .button-inactive,
 .button-inactive:hover {
@@ -567,49 +750,125 @@ ul > li > a {
   cursor: auto;
 }
 
-#about {
+#about .row {
+  align-items: stretch;
   justify-content: center;
+  margin: 80px auto 100px;
 }
-
-.subheader {
-  color: #545454;
-  font-family: "Gelasio", serif;
-  font-size: 35px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  line-height: 1.3;
+@media screen and (max-width: 1279px) {
+  #about .row {
+    flex-wrap: wrap-reverse;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about .row {
+    margin: 42px 10px;
+  }
+}
+#about .subheader {
+  padding-top: 0;
+}
+@media screen and (max-width: 767px) {
+  #about .subheader {
+    text-align: center;
+  }
+}
+#about .paragraph {
+  margin-top: 25px;
+  text-align: justify;
 }
 
 .about-img {
-  margin: 80px 120px 100px 125px;
+  margin-right: 60px;
+}
+@media screen and (max-width: 1279px) {
+  .about-img {
+    margin: 80px 68px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about-img {
+    margin: 42px 20px 0;
+  }
 }
 
 .about-text {
+  justify-content: space-between;
+  margin: 14px 0 14px 60px;
   max-width: 430px;
 }
-
-#about .paragraph {
-  margin-top: 25px;
+@media screen and (max-width: 1279px) {
+  .about-text {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about-text {
+    align-items: center;
+    margin: 0 15px;
+  }
 }
 
 #pets {
   background-color: #f6f6f6;
 }
-
 #pets .subheader {
-  margin: 0 auto;
-  padding-top: 80px;
   max-width: 400px;
-  text-align: center;
 }
-
+@media screen and (max-width: 767px) {
+  #pets .subheader {
+    padding-top: 0;
+  }
+}
 #pets .fixwidth {
   text-align: center;
 }
-
+@media screen and (max-width: 767px) {
+  #pets .fixwidth {
+    padding-top: 42px;
+  }
+}
 #pets > .fixwidth:last-child {
   padding-bottom: 100px;
+}
+@media screen and (max-width: 767px) {
+  #pets > .fixwidth:last-child {
+    padding-bottom: 42px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  #pets .row {
+    margin: 0 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #pets .row {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 42px;
+    gap: 0 calc(100vw - 300px);
+  }
+}
+@media screen and (max-width: 767px) {
+  #pets .row .card {
+    margin: 42px auto 20px;
+    order: 1;
+  }
+}
+@media screen and (max-width: 767px) {
+  #pets .row .button-arrow {
+    order: 2;
+  }
+}
+@media screen and (max-width: 1279px) {
+  #pets .row .card:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  #pets .row .card:nth-child(3) {
+    display: none;
+  }
 }
 
 .card {
@@ -620,6 +879,11 @@ ul > li > a {
   align-items: center;
   max-width: 270px;
   margin: 60px auto;
+}
+@media screen and (max-width: 767px) {
+  .card img {
+    max-width: 270px;
+  }
 }
 .card .button {
   margin: 30px auto;
@@ -650,14 +914,25 @@ figcaption {
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 0.06em;
-  margin-top: 30px;
+  margin-top: 25px;
   text-align: center;
+}
+@media screen and (max-width: 767px) {
+  #help figcaption {
+    font-size: 15px;
+    line-height: 1.1;
+  }
 }
 
 #help .subheader {
-  margin: 0 auto;
-  padding-top: 80px;
   max-width: 400px;
+}
+@media screen and (max-width: 767px) {
+  #help .subheader {
+    padding-top: 42px;
+  }
+}
+#help .fixwidth {
   text-align: center;
 }
 
@@ -667,20 +942,76 @@ figcaption {
   justify-content: center;
   margin: 60px auto 45px;
 }
+@media screen and (max-width: 1279px) {
+  .help-items {
+    margin: 60px 69px 45px;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 767px) {
+  .help-items {
+    margin: 42px 15px 12px;
+    justify-content: flex-start;
+  }
+}
 
 .help-item {
   margin: 0 60px 55px 60px;
+}
+@media screen and (max-width: 1279px) {
+  .help-item {
+    width: 170px;
+    height: 113px;
+    margin: 0 0 55px 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .help-item {
+    width: 130px;
+    height: 87px;
+    margin-bottom: 30px;
+  }
+  .help-item:nth-child(2n+1) {
+    margin-right: 30px;
+  }
+  .help-item img {
+    max-width: 50px;
+  }
+  .help-item figcaption {
+    margin-top: 16px;
+  }
 }
 
 #donation {
   background-color: #f6f6f6;
 }
-
+#donation .subheader {
+  padding-top: 0px;
+}
+@media screen and (max-width: 767px) {
+  #donation .subheader {
+    text-align: center;
+  }
+}
 #donation .row {
   justify-content: center;
   padding: 80px 0 100px;
 }
-
+@media screen and (max-width: 1279px) {
+  #donation .row {
+    flex-wrap: wrap-reverse;
+  }
+}
+@media screen and (max-width: 767px) {
+  #donation .row {
+    padding: 42px 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #donation .column:first-child {
+    padding: 0 20px;
+  }
+}
 #donation small {
   color: #b2b2b2;
   font-family: "Open Sans", sans-serif;
@@ -689,10 +1020,41 @@ figcaption {
   font-size: 12px;
   line-height: 18px;
 }
+@media screen and (max-width: 1279px) {
+  #donation small {
+    padding-bottom: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #donation small {
+    padding-bottom: 42px;
+    text-align: justify;
+  }
+}
 
 .donation-info {
   max-width: 380px;
   margin-left: 30px;
+}
+.donation-info a {
+  display: inline-block;
+}
+@media screen and (max-width: 767px) {
+  .donation-info a {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .donation-info {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .donation-info {
+    align-items: center;
+    padding: 0 10px;
+    margin: 0;
+  }
 }
 
 .subheader-details {
@@ -700,8 +1062,8 @@ figcaption {
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 1.1;
-  letter-spacing: 0.06em;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
   margin: 20px 0;
 }
 
@@ -710,6 +1072,7 @@ figcaption {
   background-color: #f1cdb3;
   border-radius: 9px;
   align-items: center;
+  justify-content: center;
   padding: 10px 15px;
   margin-bottom: 20px;
 }
@@ -729,7 +1092,12 @@ figcaption {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.15;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.11em;
+}
+@media screen and (max-width: 370px) {
+  .card-number h4 {
+    font-size: 15px;
+  }
 }
 
 .our-pets header {
@@ -740,6 +1108,11 @@ figcaption {
 }
 .our-pets .head {
   padding: 30px 0;
+}
+@media screen and (max-width: 1279px) {
+  .our-pets .head {
+    padding: 30px;
+  }
 }
 .our-pets .logo-title {
   color: #545454;
@@ -757,13 +1130,25 @@ figcaption {
 #friends {
   background-color: #f6f6f6;
 }
+#friends .fixwidth {
+  text-align: center;
+}
 
 #friends .subheader {
-  margin: 0 auto;
   max-width: 400px;
   padding-top: 80px;
   padding-bottom: 45px;
   text-align: center;
+}
+@media screen and (max-width: 1279px) {
+  #friends .subheader {
+    padding-bottom: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #friends .subheader {
+    padding: 42px 0;
+  }
 }
 
 #friends .row {
@@ -774,14 +1159,48 @@ figcaption {
 #friends .card {
   margin: 15px auto;
 }
+@media screen and (max-width: 1279px) {
+  #friends .card {
+    margin: 0 0 30px 0;
+  }
+  #friends .card:nth-child(2n+1) {
+    margin-right: 20px;
+  }
+  #friends .card:nth-child(2n) {
+    margin-left: 20px;
+  }
+  #friends .card:nth-child(n+7) {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  #friends .card:nth-child(n+4) {
+    display: none;
+  }
+}
 
 .buttons-block {
   padding-top: 45px;
   padding-bottom: 100px;
 }
+@media screen and (max-width: 1279px) {
+  .buttons-block {
+    padding: 10px 0 76px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .buttons-block {
+    padding: 12px 0 42px;
+  }
+}
 
 .buttons-block .button-arrow {
   margin: 0 10px;
+}
+@media screen and (max-width: 767px) {
+  .buttons-block .button-arrow {
+    margin: 0 5px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

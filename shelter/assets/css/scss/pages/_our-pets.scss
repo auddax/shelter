@@ -11,6 +11,10 @@
     
     .head {
         padding: 30px 0;
+
+        @media screen and (max-width: $medium) {
+            padding: 30px;
+        }
     }
 
     .logo-title {
@@ -36,14 +40,25 @@
 
 #friends {
     background-color: $color-light-l;
+
+    .fixwidth {
+        text-align: center;
+    }
 }
 
 #friends .subheader {
-    margin: 0 auto;
     max-width: 400px;
     padding-top: 80px;
     padding-bottom: 45px;
     text-align: center;
+
+    @media screen and (max-width: $medium) {
+        padding-bottom: 30px;
+    }
+
+    @media screen and (max-width: $small) {
+        padding: 42px 0;
+    }
 }
 
 #friends .row {
@@ -53,13 +68,47 @@
 
 #friends .card {
     margin: 15px auto;
+
+    @media screen and (max-width: $medium) {
+        margin: 0 0 30px 0;
+
+        &:nth-child(2n+1) {
+            margin-right: 20px;
+        }
+
+        &:nth-child(2n) {
+            margin-left: 20px;
+        }
+
+        &:nth-child(n+7) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: $small) {
+        &:nth-child(n+4) {
+            display: none;
+        }
+    }
 }
 
 .buttons-block {
     padding-top: 45px;
     padding-bottom: 100px;
+
+    @media screen and (max-width: $medium) {
+        padding: 10px 0 76px;
+    }
+
+    @media screen and (max-width: $small) {
+        padding: 12px 0 42px;
+    }
 }
 
 .buttons-block .button-arrow {
     margin: 0 10px;
+
+    @media screen and (max-width: $small) {
+        margin: 0 5px;
+    }
 }

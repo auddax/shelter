@@ -1,8 +1,9 @@
 .button {
     font-family: $font-primary;
     font-weight: 400;
-    letter-spacing: 0.06em;
-    padding: 15px 45px;
+    letter-spacing: 0.09em;
+    line-height: 1.35;
+    padding: 13px 43px;
     border-radius: 100px;
 
     &:hover {
@@ -49,6 +50,12 @@
 .button-active {
     background-color: $color-primary;
     border: 2px solid $color-primary;
+
+    &:hover {
+        background-color: $color-primary;
+        border: 2px solid $color-primary;
+        cursor: auto;
+    }
 }
 
 .button-inactive,

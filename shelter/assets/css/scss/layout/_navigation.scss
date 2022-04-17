@@ -1,3 +1,9 @@
+@media screen and (max-width: $small) {
+    .navbar {
+        display: none;
+    }
+}
+
 ul {
     display: flex;
     list-style: none;
@@ -11,8 +17,8 @@ ul>li>a {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
-    line-height: 160%;
-    padding: 6px 0 7px 0;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
     margin-left: 35px;
 }
 
