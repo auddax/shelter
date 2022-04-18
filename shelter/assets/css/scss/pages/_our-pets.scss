@@ -94,6 +94,14 @@
     }
 
     @media screen and (max-width: $small) {
+        &:nth-child(2n+1) {
+            margin-right: 0;
+        }
+
+        &:nth-child(2n) {
+            margin-left: 0;
+        }
+
         &:nth-child(n+4) {
             display: none;
         }

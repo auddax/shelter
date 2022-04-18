@@ -628,6 +628,9 @@ ul > li > a {
   width: 100vw;
   right: 0px;
 }
+.our-pets .menu-active {
+  position: static;
+}
 .our-pets .menu-active .logo-title {
   color: #f1cdb3;
 }
@@ -1245,6 +1248,12 @@ figcaption {
   }
 }
 @media screen and (max-width: 767px) {
+  #friends .card:nth-child(2n+1) {
+    margin-right: 0;
+  }
+  #friends .card:nth-child(2n) {
+    margin-left: 0;
+  }
   #friends .card:nth-child(n+4) {
     display: none;
   }

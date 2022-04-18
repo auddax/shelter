@@ -1,5 +1,15 @@
 let navbar = document.querySelectorAll('.navbar li');
 let burger = document.querySelector('.burger')
+let burgerNav = document.querySelectorAll('.burger-menu ul li')
+
+function toggler() {
+    let target = document.querySelector('header');
+    if (target.classList.contains('menu-active')) {
+        target.classList.remove('menu-active');
+    } else {
+       target.classList.add('menu-active');
+    }
+}
 
 for (let item of navbar) {
     item.addEventListener('mouseenter', () => {
@@ -10,13 +20,15 @@ for (let item of navbar) {
     })
 }
 
+for (let item of burgerNav) {
+    item.addEventListener('click', toggler)
+}
+
 burger.addEventListener('click', () => {
-    let burgerMenu = document.querySelector('.burger-menu')
-    if (burgerMenu.classList.contains('menu-active')) {
-        burgerMenu.classList.remove('menu-active');
-        document.querySelector('.logo').classList.remove('menu-active')
+    let target = document.querySelector('header');
+    if (target.classList.contains('menu-active')) {
+        target.classList.remove('menu-active');
     } else {
-       burgerMenu.classList.add('menu-active');
-       document.querySelector('.logo').classList.add('menu-active')
+       target.classList.add('menu-active');
     }
 })

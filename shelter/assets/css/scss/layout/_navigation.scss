@@ -82,7 +82,12 @@ ul>li>a:active {
 
     ul {
         width: 100vw;
+        //width: 320px;
         right: 0px;
+    }
+
+    .our-pets & {
+        position: static;
     }
 
     .our-pets & .logo-title {
