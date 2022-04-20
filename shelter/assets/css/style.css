@@ -2,7 +2,7 @@ footer, .main header {
   background: url(../img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
-.focus, ul > li > a:active, ul > li > a:hover {
+.focus, ul > li > a:active {
   color: #fafafa;
   border-bottom: 3px solid #f1cdb3;
 }
@@ -364,7 +364,12 @@ template {
 }
 
 html {
+  background-color: #ffffff;
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
 }
 
 a {
@@ -529,7 +534,6 @@ img {
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 3;
 }
 
 .logo-title {
@@ -549,7 +553,6 @@ img {
   font-style: normal;
   font-size: 13px;
   font-weight: 400;
-  text-align: center;
   line-height: 15px;
   letter-spacing: 0.09em;
 }
@@ -576,6 +579,10 @@ ul > li > a {
   margin: 0;
 }
 
+ul > li > a:hover {
+  color: #fafafa;
+}
+
 @media screen and (max-width: 767px) {
   .navbar {
     display: none;
@@ -584,25 +591,48 @@ ul > li > a {
 
 .burger-menu {
   display: none;
+  z-index: 3;
 }
 .our-pets .burger-menu {
   fill: black;
+}
+.burger-menu .overlay-darken {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  transition: 0.6s;
+}
+.burger-menu .burger-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  background-color: #292929;
+  width: 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  transition: 0.5s ease-out;
+  right: -100vw;
+}
+.burger-menu .burger-menu-list .logo {
+  position: absolute;
+  left: 10px;
+  top: 30px;
+}
+.burger-menu .burger-menu-list .logo .logo-title {
+  color: #f1cdb3;
+}
+.burger-menu .burger-menu-list .logo .logo-subtitle {
+  color: #ffffff;
 }
 .burger-menu ul {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px 0;
-  background-color: #292929;
   flex-direction: column;
-  overflow-x: hidden;
-  width: 0;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  transition: 0.5s;
-  right: -100vw;
-  z-index: 2;
 }
 @media screen and (max-width: 767px) {
   .burger-menu {
@@ -618,24 +648,27 @@ ul > li > a {
   z-index: 3;
 }
 
+.menu-active {
+  height: 100%;
+  overflow-y: hidden;
+}
 .menu-active .burger {
+  position: fixed;
+  top: 49px;
+  right: 53px;
   transform: rotate(90deg);
 }
-.our-pets .menu-active .burger {
+.menu-active .burger-our-pets {
   filter: invert(86%) sepia(35%) saturate(380%) hue-rotate(321deg) brightness(98%) contrast(92%);
 }
-.menu-active ul {
-  width: 100vw;
+.menu-active .overlay-darken {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  right: 0;
+}
+.menu-active .burger-menu-list {
+  width: 320px;
   right: 0px;
-}
-.our-pets .menu-active {
-  position: static;
-}
-.our-pets .menu-active .logo-title {
-  color: #f1cdb3;
-}
-.our-pets .menu-active .logo-subtitle {
-  color: #ffffff;
 }
 
 #contacts .row {

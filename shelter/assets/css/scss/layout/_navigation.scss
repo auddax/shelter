@@ -22,7 +22,7 @@ ul>li>a {
 }
 
 ul>li>a:hover {
-    @extend %active-link;
+    color: $color-light-s;
 }
 
 ul>li>a:active {
@@ -37,9 +37,46 @@ ul>li>a:active {
 
 .burger-menu {
     display: none;
+    z-index: 3;
 
     .our-pets & {
         fill:black;
+    }
+
+    .overlay-darken {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        transition: 0.6s;
+    }
+
+    .burger-menu-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        background-color: $color-dark-3xl;
+        width: 0;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        transition: 0.5s ease-out;
+        right: -100vw;
+
+        .logo {
+            position: absolute;
+            left: 10px;
+            top: 30px;
+
+            .logo-title {
+                color: $color-primary;
+            }
+
+            .logo-subtitle {
+                color: $color-light-xl;
+            }
+        }
     }
 
     ul {
@@ -47,16 +84,7 @@ ul>li>a:active {
         align-items: center;
         justify-content: center;
         gap: 40px 0;
-        background-color: $color-dark-3xl;
         flex-direction: column;
-        overflow-x: hidden;
-        width: 0;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        transition: 0.5s;
-        right: -100vw;
-        z-index: 2;
     }
 
     @media screen and (max-width: $small) {
@@ -73,29 +101,29 @@ ul>li>a:active {
 }
 
 .menu-active {
+    height: 100%;
+    overflow-y: hidden;
+
     .burger {
+        position: fixed;
+        top: 49px;
+        right: 53px;
         transform: rotate(90deg);
-        .our-pets & {
-            filter: invert(86%) sepia(35%) saturate(380%) hue-rotate(321deg) brightness(98%) contrast(92%);
-        }
     }
 
-    ul {
-        width: 100vw;
-        //width: 320px;
+    .burger-our-pets {
+        filter: invert(86%) sepia(35%) saturate(380%) hue-rotate(321deg) brightness(98%) contrast(92%);
+    }
+
+    .overlay-darken {
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        right: 0;
+    }
+
+    .burger-menu-list {
+        width: 320px;
         right: 0px;
-    }
-
-    .our-pets & {
-        position: static;
-    }
-
-    .our-pets & .logo-title {
-        color: $color-primary;
-    }
-
-    .our-pets & .logo-subtitle {
-        color: $color-light-xl;
     }
 }
 
