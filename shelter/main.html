@@ -98,31 +98,17 @@
         <div class="fixwidth">
           <h3 class="subheader">Our friends who<br>are looking for a house</h3>
           <div class="slider row">
-            <button class="button-arrow">
+            <button class="button-arrow button-arrow-left">
               <img src="assets/img/arrow-left.png" alt="Left Arrow">
             </button>
-            <article class="card">
-              <figure>
-                <img src="assets/img/pets-katrine.png" alt="Cat">
-                <figcaption>Katrine</figcaption>
-              </figure>
-              <button class="button button-outline">Learn more</button>
-            </article>
-            <article class="card">
-              <figure>
-                <img src="assets/img/pets-jennifer.png" alt="Puppy">
-                <figcaption>Jennifer</figcaption>
-              </figure>
-              <button class="button button-outline">Learn more</button>
-            </article>
-            <article class="card">
-              <figure>
-                <img src="assets/img/pets-woody.png" alt="Dog">
-                <figcaption>Woody</figcaption>
-              </figure>
-              <button class="button button-outline">Learn more</button>
-            </article>
-            <button class="button-arrow">
+            <div class="carousel-wrapper">
+              <div class="carousel">
+                <div class="left-carousel-items"></div>
+                <div class="center-carousel-items"></div>
+                <div class="right-carousel-items"></div>
+              </div>
+            </div>
+            <button class="button-arrow button-arrow-right">
               <img src="assets/img/arrow-right.png" alt="Right Arrow">
             </button>
           </div>
@@ -232,7 +218,30 @@
       </div>
     </footer>
 
+    <!-- Popup -->
+    <div class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <div class="popup__img"></div>
+          <div class="popup__description">
+            <h3 class="subheader"></h3>
+            <h4 class="popup__type"></h4>
+            <p class="popup__about"></p>
+            <ul class="popup__list">
+              <li class="popup__list-item"></li>
+              <li class="popup__list-item"></li>
+              <li class="popup__list-item"></li>
+              <li class="popup__list-item"></li>
+            </ul>
+          </div>
+        </div>
+        <button class="button-arrow popup__close">
+          <img src="assets/ico/close.svg" alt="Close">
+        </button>  
+      </div>
+    </div>
+
     <!-- Script -->
-    <script src="assets/src/script.js"></script>
+    <script src="assets/src/main.js"></script>
   </body>
 </html>

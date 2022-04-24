@@ -58,70 +58,16 @@
     <main id="friends">
       <div class="fixwidth">
         <h3 class="subheader">Our friends who<br>are looking for a house</h3>
-        <section class="row card-set">
-          <article class="card">
-            <figure>
-              <img src="assets/img/pets-katrine.png" alt="Cat">
-              <figcaption>Katrine</figcaption>
-            </figure>
-            <button class="button button-outline">Learn more</button>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="assets/img//pets-jennifer.png" alt="Puppy">
-              <figcaption>Jennifer</figcaption>
-            </figure>
-            <button class="button button-outline">Learn more</button>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="assets/img/pets-woody.png" alt="Dog">
-              <figcaption>Woody</figcaption>
-            </figure>
-            <button class="button button-outline">Learn more</button>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="assets/img/pets-sophia.png" alt="Cat">
-              <figcaption>Sophia</figcaption>
-            </figure>
-            <button class="button button-outline">Learn more</button>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="assets/img/pets-timmy.png" alt="Puppy">
-              <figcaption>Timmy</figcaption>
-            </figure>
-            <button class="button button-outline">Learn more</button>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="assets/img/pets-charly.png" alt="Dog">
-              <figcaption>Charly</figcaption>
-            </figure>
-            <button class="button button-outline">Learn more</button>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="assets/img/pets-scarlet.png" alt="Puppy">
-              <figcaption>Scarlett</figcaption>
-            </figure>
-            <button class="button button-outline">Learn more</button>
-          </article>
-          <article class="card">
-            <figure>
-              <img src="assets/img/pets-freddie.png" alt="Dog">
-              <figcaption>Freddie</figcaption>
-            </figure>
-            <button class="button button-outline">Learn more</button>
-          </article>
-        </section>
+        <div class="row carousel-wrapper">
+          <div class="carousel" style="left: 0px">
+          </div>
+        </div>
         <div class="row buttons-block">
-          <button class="button-arrow button-inactive">&lt;&lt;</button>
-          <button class="button-arrow button-inactive">&lt;</button>
-          <button class="button-arrow button-active">1</button>
-          <button class="button-arrow">&gt;</button>
-          <button class="button-arrow">&gt;&gt;</button>
+          <button class="button-arrow button-inactive button-arrow-start">&lt;&lt;</button>
+          <button class="button-arrow button-inactive button-arrow-left">&lt;</button>
+          <button class="button-arrow button-active button-page-number">1</button>
+          <button class="button-arrow button-arrow-right">&gt;</button>
+          <button class="button-arrow button-arrow-end">&gt;&gt;</button>
         </div>
       </div>
     </main>
@@ -156,7 +102,30 @@
       </div>
     </footer>
 
+    <!-- Popup -->
+    <div class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <div class="popup__img"></div>
+          <div class="popup__description">
+            <h3 class="subheader"></h3>
+            <h4 class="popup__type"></h4>
+            <p class="popup__about"></p>
+            <ul class="popup__list">
+              <li class="popup__list-item"></li>
+              <li class="popup__list-item"></li>
+              <li class="popup__list-item"></li>
+              <li class="popup__list-item"></li>
+            </ul>
+          </div>
+        </div>
+        <button class="button-arrow popup__close">
+          <img src="assets/ico/close.svg" alt="Close">
+        </button>  
+      </div>
+    </div>
+
     <!-- Script -->
-    <script src="assets/src/script.js"></script>
+    <script src="assets/src/our-pets.js"></script>
   </body>
 </html>

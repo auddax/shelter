@@ -126,19 +126,68 @@
     }
 }
 
+.carousel-wrapper {
+    width: 990px;
+    overflow-x: hidden;
+}
+
+.carousel {
+    display: flex;
+    gap: 90px;
+    position: relative;
+    left: -1080px;
+}
+
+.left-carousel-items,
+.center-carousel-items,
+.right-carousel-items {
+    gap: 90px;
+    display: flex;
+}
+
+@keyframes move-right {
+    from {
+        left: -1080px;
+    }
+
+    to {
+        left: -2160px;
+    }
+}
+@keyframes move-left {
+    from {
+        left: -1080px;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 3s;
+}
+
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 3s;
+}
+
 .card {
     background-color: $color-light-s;
     border-radius: 9px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 270px;
+    width: 270px;
     margin: 60px auto;
 
     img {
-        @media screen and (max-width: $small) {
-            max-width: 270px;
-        }
+        // @media screen and (max-width: $small) {
+        //     max-width: 270px;
+        // }
+        max-width: 270px;
     }
 
     .button {

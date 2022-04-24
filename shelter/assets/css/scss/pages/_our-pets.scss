@@ -52,6 +52,54 @@
     .fixwidth {
         text-align: center;
     }
+
+    .carousel-wrapper {
+        width: 1200px;
+        height: 930px;
+        margin: 0 auto;
+        justify-content: unset;
+
+        @media screen and (max-width: $medium) {
+            width: 580px;
+            height: 1365px;
+            margin-bottom: 28px;
+        }
+    
+        @media screen and (max-width: $small) {
+            width: 270px;
+            height: 1365px;
+            margin-bottom: 30px;
+        }
+
+        .carousel {
+            gap: unset;
+            column-gap: 40px;
+            transition: 1.5s;
+            left: 0;
+        }
+
+        .carousel-items {
+            display: flex;
+            width: 1200px;
+            gap: 30px 40px;
+            flex-wrap: wrap;
+
+            .card {
+                // width: 270px;
+                // height: 435px;
+                display: flex;
+                margin: unset;
+            }
+
+            @media screen and (max-width: $medium) {
+                width: 580px;
+            }
+        
+            @media screen and (max-width: $small) {
+                width: 270px;
+            }
+        }
+    }
 }
 
 #friends .subheader {
@@ -71,7 +119,7 @@
 
 #friends .row {
     flex-wrap: wrap;
-    justify-content: center;
+    //justify-content: center;
 }
 
 #friends .card {
@@ -111,6 +159,7 @@
 .buttons-block {
     padding-top: 45px;
     padding-bottom: 100px;
+    justify-content: center;
 
     @media screen and (max-width: $medium) {
         padding: 10px 0 76px;
