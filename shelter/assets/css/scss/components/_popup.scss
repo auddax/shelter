@@ -16,14 +16,7 @@
   display: flex;
 
   @media screen and (max-width: $medium) {
-    width: 682px;
-    height: 402px;
-    margin-left: 43px;
-  }
-
-  @media screen and (max-width: $small) {
-      width: 271px;
-      height: 393px;
+    margin-left: 52px;
   }
 }
 

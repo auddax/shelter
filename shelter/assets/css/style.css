@@ -868,15 +868,7 @@ ul > li > a:hover {
 }
 @media screen and (max-width: 1279px) {
   .popup__body {
-    width: 682px;
-    height: 402px;
-    margin-left: 43px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .popup__body {
-    width: 271px;
-    height: 393px;
+    margin-left: 52px;
   }
 }
 
@@ -1156,6 +1148,16 @@ ul > li > a:hover {
   width: 990px;
   overflow-x: hidden;
 }
+@media screen and (max-width: 1279px) {
+  .carousel-wrapper {
+    width: 580px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .carousel-wrapper {
+    width: 270px;
+  }
+}
 
 .carousel {
   display: flex;
@@ -1163,12 +1165,30 @@ ul > li > a:hover {
   position: relative;
   left: -1080px;
 }
+@media screen and (max-width: 1279px) {
+  .carousel {
+    gap: 40px;
+    left: -620px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .carousel {
+    left: -310px;
+  }
+}
 
 .left-carousel-items,
 .center-carousel-items,
 .right-carousel-items {
   gap: 90px;
   display: flex;
+}
+@media screen and (max-width: 1279px) {
+  .left-carousel-items,
+.center-carousel-items,
+.right-carousel-items {
+    gap: 40px;
+  }
 }
 
 @keyframes move-right {
@@ -1185,6 +1205,42 @@ ul > li > a:hover {
   }
   to {
     left: 0;
+  }
+}
+@media screen and (max-width: 1279px) {
+  @keyframes move-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  @keyframes move-right {
+    from {
+      left: -310px;
+    }
+    to {
+      left: -620px;
+    }
+  }
+  @keyframes move-left {
+    from {
+      left: -310px;
+    }
+    to {
+      left: 0;
+    }
   }
 }
 .transition-right {

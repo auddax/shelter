@@ -31,48 +31,36 @@ const buttonRight = document.querySelector('.button-arrow-right');
 const buttonStart = document.querySelector('.button-arrow-start');
 const buttonEnd = document.querySelector('.button-arrow-end');
 const carousel = document.querySelector('.carousel');
+let numberOfPetsRow = 3;
 let petsData = [];
+
+if (document.body.clientWidth < 1280 && document.body.clientWidth > 767) {
+    numberOfPetsRow = 2;
+  } else if (document.body.clientWidth < 768) {
+    numberOfPetsRow = 1;
+  }
 
 document.addEventListener('DOMContentLoaded', () => {
     getData('https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/markups/level-2/shelter/pets.json')
-        .then(result => {
-            petsData = result;
+    .then(result => {
+        petsData = result;
 
-            // Checking the page
-            if (document.URL.includes('main')) {
-                let randomIndex = randomizer(petsData.length);
-                randomIndex.push(randomIndex[0]); // Adding third element to the right carousel items
-                for (j = 0; j < 3; j++) {
-                    for (let i = 0; i < 3; i++) {
-                        let index = randomIndex.pop()
-                        let imgPath = 'assets/img/pets-' + result[index]["img"].split('/')[4];
-                        let name = result[index]["name"];
-                        carousel.children[j].insertAdjacentHTML('afterbegin',`<article class="card"><figure><img src=${imgPath} alt="Cat"><figcaption>${name}</figcaption></figure><button class="button button-outline">Learn more</button></article>`)
-                    }    
-                }
-            } else {
-                let randomIndex = [];
-                for (let i = 0; i < 6; i++) {
-                    let res = randomizer(petsData.length)
-                    randomIndex.push(res)
-                }
-
-                for (let j = 0; j < 6; j++) {
-                    for (let i = 0; i < 8; i++) {
-                        let index = randomIndex[j].pop()
-                        let imgPath = 'assets/img/pets-' + petsData[index]["img"].split('/')[4];
-                        let name = petsData[index]["name"];
-                        carousel.children[j].insertAdjacentHTML('afterbegin',`<article class="card"><figure><img src=${imgPath} alt="Cat"><figcaption>${name}</figcaption></figure><button class="button button-outline">Learn more</button></article>`)
-                    }    
-                }
-            }
-        }).then(() => {
-            const cardList = document.querySelectorAll('.card');
-            for (let card of cardList) {
-                card.addEventListener('click', showPopup);
-            }
-        })
-
+        let randomIndex = randomizer(result.length);
+        randomIndex.push(randomIndex[0]); // Adding third element to the right carousel items
+        for (j = 0; j < 3; j++) {
+            for (let i = 0; i < numberOfPetsRow; i++) {
+                let index = randomIndex.pop()
+                let imgPath = 'assets/img/pets-' + result[index]["img"].split('/')[4];
+                let name = result[index]["name"];
+                carousel.children[j].insertAdjacentHTML('afterbegin',`<article class="card"><figure><img src=${imgPath} alt="Cat"><figcaption>${name}</figcaption></figure><button class="button button-outline">Learn more</button></article>`)
+            }    
+        }
+    }).then(() => {
+        const cardList = document.querySelectorAll('.card');
+        for (let card of cardList) {
+            card.addEventListener('click', showPopup);
+        }
+    })
 })
 
 

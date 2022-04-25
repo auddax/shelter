@@ -129,6 +129,14 @@
 .carousel-wrapper {
     width: 990px;
     overflow-x: hidden;
+
+    @media screen and (max-width: $medium) {
+        width: 580px;
+    }
+
+    @media screen and (max-width: $small) {
+        width: 270px;
+    }
 }
 
 .carousel {
@@ -136,6 +144,15 @@
     gap: 90px;
     position: relative;
     left: -1080px;
+
+    @media screen and (max-width: $medium) {
+        gap: 40px;
+        left: -620px;
+    }
+
+    @media screen and (max-width: $small) {
+        left: -310px;
+    }
 }
 
 .left-carousel-items,
@@ -143,6 +160,10 @@
 .right-carousel-items {
     gap: 90px;
     display: flex;
+
+    @media screen and (max-width: $medium) {
+        gap: 40px;
+    }
 }
 
 @keyframes move-right {
@@ -154,6 +175,7 @@
         left: -2160px;
     }
 }
+
 @keyframes move-left {
     from {
         left: -1080px;
@@ -161,6 +183,50 @@
 
     to {
         left: 0;
+    }
+}
+
+@media screen and (max-width: $medium) {
+    @keyframes move-right {
+        from {
+            left: -620px;
+        }
+    
+        to {
+            left: -1240px;
+        }
+    }
+
+    @keyframes move-left {
+        from {
+            left: -620px;
+        }
+    
+        to {
+            left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $small) {
+    @keyframes move-right {
+        from {
+            left: -310px;
+        }
+    
+        to {
+            left: -620px;
+        }
+    }
+
+    @keyframes move-left {
+        from {
+            left: -310px;
+        }
+    
+        to {
+            left: 0;
+        }
     }
 }
 
