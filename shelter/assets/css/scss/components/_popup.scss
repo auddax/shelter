@@ -20,15 +20,23 @@
   }
 }
 
+
 .popup__close {
   position: relative;
   top: -52px;
   left: -9px;
   background: unset;
+  transition: 0.6s;
   @media screen and (max-width: $small) {
     top: -53px;
     left: -26px;
+  }
 }
+
+.popup__hover {
+  background-color: $color-primary-light;
+  border: 2px solid $color-primary-light;
+  cursor: pointer;
 }
 
 .popup__img {
@@ -52,19 +60,15 @@
 .popup__content {
   display: flex;
   width: 900px;
-  //height: 500px;
   background-color: $color-light-s;
   border-radius: 9px;
 
   @media screen and (max-width: $medium) {
     width: 630px;
-    //height: 350px;
   }
 
   @media screen and (max-width: $small) {
       width: 240px;
-      // align-items: center;
-      //height: 341px;
   }
 }
 

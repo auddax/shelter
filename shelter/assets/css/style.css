@@ -877,12 +877,19 @@ ul > li > a:hover {
   top: -52px;
   left: -9px;
   background: unset;
+  transition: 0.6s;
 }
 @media screen and (max-width: 767px) {
   .popup__close {
     top: -53px;
     left: -26px;
   }
+}
+
+.popup__hover {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+  cursor: pointer;
 }
 
 .popup__img img {

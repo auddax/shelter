@@ -52,7 +52,6 @@ if (document.body.clientWidth < 1280 && document.body.clientWidth > 767) {
 document.addEventListener('DOMContentLoaded', createCarouselContent)
 
 
-
 function createCarouselContent() {
   getData('https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/markups/level-2/shelter/pets.json')
   .then(result => {
@@ -122,7 +121,7 @@ function moveRight() {
         let carouselWidth = carouselWindowWidth*(numberOfPages - 1)
 
         let left = parseInt(carousel.style.left, 10) - carouselWindowWidth;
-        if (left < -6200) left = carouselWidth;
+        if (left < -carouselWidth) left = -carouselWidth;
         carousel.style.left = left + 'px';
 
         if (currenPageNumber < numberOfPages) currenPageNumber++;
@@ -287,7 +286,8 @@ function showPopup(event) {
 
 function closePopup(event) {
     if (event.target.classList.contains('popup') 
-    || event.currentTarget.classList.contains('popup__close')) {
+    || event.currentTarget.classList.contains('popup__close')
+    || event.target.classList.contains('popup__body')) {
         let body = document.querySelector('body');
       
         if (body.classList.contains('popup-active')) {
@@ -301,8 +301,24 @@ function closePopup(event) {
             content.children[1].children[3].children[2].innerHTML = '';
             content.children[1].children[3].children[3].innerHTML = '';
   
-
             body.classList.remove('popup-active');
         }
     }  
 }
+
+// Hover effect for close-popup button
+popup.addEventListener('mouseover', (event) => {
+    let targetClasses = event.target.classList;
+    if (targetClasses.contains('popup')
+    || targetClasses.contains('popup__body')) {
+        popupClose.classList.add('popup__hover');
+    }
+})
+
+popup.addEventListener('mouseout', (event) => {
+    let targetClasses = event.target.classList;
+    if (targetClasses.contains('popup')
+    || targetClasses.contains('popup__body')) {
+        popupClose.classList.remove('popup__hover');
+    }
+})

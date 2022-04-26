@@ -190,7 +190,8 @@ function showPopup(event) {
 
 function closePopup(event) {
     if (event.target.classList.contains('popup') 
-    || event.currentTarget.classList.contains('popup__close')) {
+    || event.currentTarget.classList.contains('popup__close')
+    || event.target.classList.contains('popup__body')) {
         let body = document.querySelector('body');
       
         if (body.classList.contains('popup-active')) {
@@ -204,11 +205,27 @@ function closePopup(event) {
             content.children[1].children[3].children[2].innerHTML = '';
             content.children[1].children[3].children[3].innerHTML = '';
   
-
             body.classList.remove('popup-active');
         }
     }  
 }
+
+// Hover effect for close-popup button
+popup.addEventListener('mouseover', (event) => {
+    let targetClasses = event.target.classList;
+    if (targetClasses.contains('popup')
+    || targetClasses.contains('popup__body')) {
+        popupClose.classList.add('popup__hover');
+    }
+})
+
+popup.addEventListener('mouseout', (event) => {
+    let targetClasses = event.target.classList;
+    if (targetClasses.contains('popup')
+    || targetClasses.contains('popup__body')) {
+        popupClose.classList.remove('popup__hover');
+    }
+})
 
 
 
