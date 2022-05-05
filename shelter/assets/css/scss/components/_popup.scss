@@ -10,6 +10,10 @@
   transition: 0.6s;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .popup__body {
@@ -62,6 +66,10 @@
   width: 900px;
   background-color: $color-light-s;
   border-radius: 9px;
+
+  &:hover {
+    cursor: auto;
+  }
 
   @media screen and (max-width: $medium) {
     width: 630px;

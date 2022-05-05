@@ -862,6 +862,9 @@ ul > li > a:hover {
   justify-content: center;
   align-items: center;
 }
+.popup:hover {
+  cursor: pointer;
+}
 
 .popup__body {
   display: flex;
@@ -915,6 +918,9 @@ ul > li > a:hover {
   width: 900px;
   background-color: #fafafa;
   border-radius: 9px;
+}
+.popup__content:hover {
+  cursor: auto;
 }
 @media screen and (max-width: 1279px) {
   .popup__content {
